@@ -31,6 +31,18 @@ for that purpose, this app allows you to provide your own datasets and check how
 <td align="center"><img src="https://user-images.githubusercontent.com/69664213/137669287-7e5ce3cc-b960-4468-8299-4e3bdab85759.png" alt="About Screen"width="300"></td>
 </tr>
 </tbody>
+   <thead>
+<tr>
+<th align="center">Theory Screen</th>
+<th align="center">Simulation Screen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img src="https://user-images.githubusercontent.com/69664213/137713326-f8cf32a3-1478-47b8-b5d6-362bb0c87d9f.png" alt="Dialog" width="300"></td>
+<td align="center"><img src="https://user-images.githubusercontent.com/69664213/137713403-54df8d00-5b2a-4eac-8196-7f69f85a76eb.png" alt="About Screen"width="300"></td>
+</tr>
+</tbody>
 <thead>
 <tr>
 <th align="center">Graph Simulation Screen</th>
