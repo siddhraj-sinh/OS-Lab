@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/ic_main_bg"/>
+
+    <item android:drawable="@drawable/ic_main_logo" android:gravity="center"/>
+    <item android:drawable="@drawable/ic_slogan" android:gravity="center|bottom" android:bottom="95dp"/>
+</layer-list>

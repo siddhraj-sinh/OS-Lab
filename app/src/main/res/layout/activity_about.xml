@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white_solid"
+    tools:context=".AboutActivity"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/toolbar" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+       >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:gravity="clip_horizontal|center|center_vertical"
+                android:padding="20dp"
+                android:text="@string/what_is_os_virtual_lab"
+                android:textColor="@color/black"
+                android:lineSpacingExtra="5dp"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:padding="10dp"
+                android:text="@string/os_definition"
+                android:lineSpacingExtra="5dp"
+                android:textColor="#9A000000"
+                android:textSize="18sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:fontFamily="@font/montserrat"
+                android:textColor="#9A000000"
+                android:textSize="18sp"
+                android:lineSpacingExtra="5dp"
+                android:text="@string/intro_os_four_resource"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:lineSpacingExtra="5dp"
+                android:paddingStart="40dp"
+                android:text="@string/os_four_resource"
+                android:textColor="#9A000000"
+                android:textSize="18sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Each OS contains several algorithms that provide the above functionalities For instance:"
+                android:lineSpacingExtra="5dp"
+                android:fontFamily="@font/montserrat"
+                android:textColor="#9A000000"
+                android:textSize="18sp"
+                android:padding="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:lineSpacingExtra="5dp"
+                android:paddingStart="40dp"
+                android:text="&#8226; A CPU scheduling algorithm chooses which process should take the CPU in each instant \n&#8226; Another algorithm is in charge of not letting a deadlock happen when process allocate resources \n&#8226; A memory managment algorithm divides the memory in portions for each process, and another decides which portions should be swapped and which ones should stay in RAM. Allocation may be contiguous or not. In the latter case we will have more modern mechanisms such as paging or segmentation. then, a page replacement algorithm will decide which pages can stay in memory and which pages do not. \n&#8226; Another algorithm is in charge of paying attention to all the interruptions that the hardware can produce to the I/O system \n&#8226; And so on."
+                android:textColor="@color/body_text_color"
+                android:textSize="18sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textColor="@color/body_text_color"
+                android:textSize="18sp"
+                android:fontFamily="@font/montserrat"
+                android:lineSpacingExtra="5dp"
+                android:text="@string/footer"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textColor="@color/body_text_color"
+                android:textSize="18sp"
+                android:fontFamily="@font/montserrat"
+                android:lineSpacingExtra="5dp"
+                android:text="@string/goal_of_this_app"/>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

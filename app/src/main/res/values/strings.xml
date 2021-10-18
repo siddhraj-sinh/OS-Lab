@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">OS Lab</string>
+
+    <string name="what_is_os_virtual_lab">What is OS Virtual Lab?</string>
+    <string name="os_definition">OS Virtual Lab is an educational application that allows you to simulate the algorithms that make an Operating System (OS) work.</string>
+    <string name="os_four_resource">1. The CPU \n2. The Memory \n3. The Input/Output (I/O) System \n4. The File System</string>
+    <string name="intro_os_four_resource">As you may know, the main objective of an OS is to manage 4 resources:</string>
+    <string name="goal_of_this_app">The goal of this application is to provide explanations about different approaches to each problem and to illustrate how the each algorithm works by means of simulations. For that purpose, this app allows you to provide your own datasets and check how each algorithm would perform on them.</string>
+    <string name="footer">In order to understand an OS deeply, one must know how these algorithms work and why some approaches that seem reasonable have been discarded by well-known Operating System such as Windows or Linux.</string>
+    <string name="page_replacement_algorithm">Page Replacement Algorithm</string>
+    <string name="PGA_definition">Page replacement is a process of swapping out an existing page from the frame of a main memory and replacing it with the required page.</string>
+
+    <string-array name="algorithms">
+        <item>FIFO</item>
+        <item>LIFO</item>
+        <item>LRU</item>
+        <item>OPTIMAL</item>
+
+    </string-array>
+
+    <string name="text_hit">HITS: %d</string>
+    <string name="text_fault">FAULTS: %d</string>
+    <string name="text_miss_ratio">MISS RATIO: %f</string>
+    <string name="text_hit_ratio">HIT RATIO: %f</string>
+    <string name="_1_fifo_page_replacement_algorithm">1. <u>FIFO Page Replacement Algorithm</u></string>
+    <string name="_2_lifo_page_replacement_algorithm">2. <u>LIFO Page Replacement Algorithm</u></string>
+    <string name="_3_lru_page_replacement_algorithm">3. <u>LRU Page Replacement Algorithm</u></string>
+    <string name="_4_optimal_page_replacement_algorithm">4. <u>Optimal Page Replacement Algorithm</u></string>
+</resources>

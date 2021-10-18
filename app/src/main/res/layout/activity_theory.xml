@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_solid"
+    tools:context=".TheoryActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:gravity="clip_horizontal|center|center_vertical"
+            android:padding="20dp"
+            android:text="@string/page_replacement_algorithm"
+            android:textColor="@color/black"
+            android:lineSpacingExtra="5dp"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:text="@string/PGA_definition"
+                android:background="@drawable/box"
+                android:lineSpacingExtra="5dp"
+                android:textColor="#9A000000"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:padding="10dp"
+                android:text="Page replacement is required when-"
+                android:lineSpacingExtra="5dp"
+                android:textColor="#9A000000"
+                android:textSize="18sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:lineSpacingExtra="5dp"
+                android:paddingStart="40dp"
+                android:text="&#8226; All the frames of main memory are already occupied. \n&#8226; Thus, a page has to be replaced to create a room for the required page."
+                android:textColor="#9A000000"
+                android:textSize="18sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:text="Various Page replacement are :"
+                android:lineSpacingExtra="5dp"
+                android:textColor="#9A000000"
+                android:textSize="18sp"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/types_of_pra" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:padding="10dp"
+                android:text="@string/_1_fifo_page_replacement_algorithm"
+                android:lineSpacingExtra="5dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:lineSpacingExtra="5dp"
+                android:paddingStart="40dp"
+                android:text="&#8226; As the name suggests, this algorithm works on the principle of “First in First out“. \n&#8226; It replaces the oldest page that has been present in the main memory for the longest time. \n&#8226; It is implemented by keeping track of all the pages in a queue."
+                android:textColor="#9A000000"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:padding="10dp"
+                android:text="@string/_2_lifo_page_replacement_algorithm"
+                android:lineSpacingExtra="5dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:lineSpacingExtra="5dp"
+                android:paddingStart="40dp"
+                android:text="&#8226; As the name suggests, this algorithm works on the principle of “Last in First out“. \n&#8226; It replaces the newest page that arrived at last in the main memory. \n&#8226; It is implemented by keeping track of all the pages in a stack."
+                android:textColor="#9A000000"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:padding="10dp"
+                android:text="@string/_3_lru_page_replacement_algorithm"
+                android:lineSpacingExtra="5dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:lineSpacingExtra="5dp"
+                android:paddingStart="40dp"
+                android:text="&#8226; As the name suggests, this algorithm works on the principle of “Least Recently Used“. \n&#8226; It replaces the page that has not been referred by the CPU for the longest time."
+                android:textColor="#9A000000"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:padding="10dp"
+                android:text="@string/_4_optimal_page_replacement_algorithm"
+                android:lineSpacingExtra="5dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:lineSpacingExtra="5dp"
+                android:paddingStart="40dp"
+                android:text="&#8226; This algorithm replaces the page that will not be referred by the CPU in future for the longest time. \n&#8226; It is practically impossible to implement this algorithm. \n&#8226; This is because the pages that will not be used in future for the longest time can not be predicted. \n&#8226; However, it is the best known algorithm and gives the least number of page faults. \n&#8226; Hence, it is used as a performance measure criterion for other algorithms."
+                android:textColor="#9A000000"
+                android:textSize="18sp" />
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
