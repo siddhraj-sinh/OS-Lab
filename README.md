@@ -2,7 +2,7 @@
 This is an educational application that allows you to simulate the algorithms that make an Operating System (OS) work.
 
 ## Goal
-The goal of this application is to provide explanations about different approaches to each problem and to illustrate how the eash algorithm works by means of simulations.
+The goal of this application is to provide explanations about different approaches to each problem and to illustrate how the each algorithm works by means of simulations.
 for that purpose, this app allows you to provide your own datasets and check how each algorithm would perform on them.
 
 ## Screenshots
