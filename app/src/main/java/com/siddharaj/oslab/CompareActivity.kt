@@ -1,7 +1,15 @@
 package com.siddharaj.oslab
 
+import android.app.Dialog
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.TextView
+import com.github.mikephil.charting.charts.BarChart
+import com.github.mikephil.charting.data.BarData
+import com.github.mikephil.charting.data.BarDataSet
+import com.github.mikephil.charting.data.BarEntry
 import com.siddharaj.oslab.databinding.ActivityCompareBinding
 import java.util.*
 import kotlin.collections.ArrayList
@@ -31,10 +39,60 @@ class CompareActivity : AppCompatActivity() {
             OPTIMAL(reference, pageFrame.toInt())
         }
 
+        binding.btnComparePageFault.setOnClickListener {
+            val reference = IntArray(refNumbers.size)
+
+            for (i in refNumbers.indices) {
+                reference[i] = refNumbers[i].toInt()
+            }
+            showFaultGraph(reference,pageFrame)
+        }
+
 
     }
 
-    private fun FIFO(pageReference: IntArray, pageFrame: Int) {
+    private fun showFaultGraph(reference: IntArray, frame: String?) {
+        if(reference != null && frame != null) {
+            val dialog = Dialog(this, R.style.Theme_Dialog)
+            dialog.setCancelable(true)
+            dialog.setContentView(R.layout.graph_dialog)
+            val tv: TextView = dialog.findViewById(R.id.tv_header)
+            tv.visibility = View.GONE
+            val barChart: BarChart = dialog.findViewById(R.id.barChart)
+
+            val x1 = 1
+            val x2 = 2
+            val x3 = 3
+            val x4 = 4
+
+            val y1 = FIFO(reference, frame.toInt())
+            val y2 = LIFO(reference, frame.toInt())
+            val y3 = LRU(reference, frame.toInt())
+            val y4 = OPTIMAL(reference, frame.toInt())
+            val values = ArrayList<BarEntry>()
+
+            values.add(BarEntry(x1.toFloat(), y1.toFloat()))
+            values.add(BarEntry(x2.toFloat(), y2.toFloat()))
+            values.add(BarEntry(x3.toFloat(), y3.toFloat()))
+            values.add(BarEntry(x4.toFloat(), y4.toFloat()))
+
+
+            val dataSet: BarDataSet = BarDataSet(values, "Page faults")
+            dataSet.color = Color.parseColor("#FF03DAC5")
+            dataSet.valueTextColor = Color.BLACK
+            dataSet.valueTextSize = 16f
+
+            val barData = BarData(dataSet)
+            barChart.setFitBars(true)
+            barChart.data = barData
+            barChart.description.text = "Bar Chart"
+            barChart.animateY(2000)
+
+            dialog.show()
+        }
+    }
+
+    private fun FIFO(pageReference: IntArray, pageFrame: Int):Int {
         var pageFaults = 0
         var pageHits = 0
         val tempArray = ArrayList<Int>()
@@ -71,9 +129,10 @@ class CompareActivity : AppCompatActivity() {
         binding.hFifo.text="Hits :$pageHits"
         binding.mrFifo.text="MissRatio :$missRatio"
         binding.hrFifo.text="HitRatio :$hitRatio"
+        return pageFaults
     }
 
-    private fun LIFO(pageReference: IntArray, pageFrame: Int) {
+    private fun LIFO(pageReference: IntArray, pageFrame: Int):Int{
         var pageFaults = 0
         var pageHits = 0
         val tempArray = ArrayList<Int>()
@@ -109,9 +168,10 @@ class CompareActivity : AppCompatActivity() {
         binding.hLifo.text="Hits :$pageHits"
         binding.mrLifo.text="MissRatio :$missRatio"
         binding.hrLifo.text="HitRatio :$hitRatio"
+        return pageFaults
     }
 
-    private fun LRU(pageReference: IntArray, pageFrame: Int) {
+    private fun LRU(pageReference: IntArray, pageFrame: Int):Int {
         var pageFaults = 0
         var pageHits = 0
         val s: HashSet<Int> = HashSet(pageFrame)
@@ -182,9 +242,10 @@ class CompareActivity : AppCompatActivity() {
         binding.hLru.text="Hits :$pageHits"
         binding.mrLru.text="MissRatio :$missRatio"
         binding.hrLru.text="HitRatio :$hitRatio"
+        return pageFaults
     }
 
-    private fun OPTIMAL(pageReference: IntArray, pageFrame: Int) {
+    private fun OPTIMAL(pageReference: IntArray, pageFrame: Int):Int {
         var pageFaults = 0
         // Set to store the elements present in queue, used to check if a page is present or not
         val set: HashSet<Int> = HashSet()
@@ -232,5 +293,6 @@ class CompareActivity : AppCompatActivity() {
         binding.hOptimal.text="Hits :$pageHits"
         binding.mrOptimal.text="MissRatio :$missRatio"
         binding.hrOptimal.text="HitRatio :$hitRatio"
+        return pageFaults
     }
 }
