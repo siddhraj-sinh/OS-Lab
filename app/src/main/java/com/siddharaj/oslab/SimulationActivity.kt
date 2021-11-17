@@ -1,6 +1,7 @@
 package com.siddharaj.oslab
 
 import android.app.Dialog
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.Menu
@@ -22,6 +23,7 @@ class SimulationActivity : AppCompatActivity() {
     private lateinit var etReferenceNumbers: EditText
     private lateinit var etPageFrame: EditText
     private lateinit var btnSubmit: Button
+    private lateinit var btnCompare:Button
     private lateinit var tvHit:TextView
     private lateinit var tvFaults:TextView
     private lateinit var tvHitRatio:TextView
@@ -38,6 +40,7 @@ class SimulationActivity : AppCompatActivity() {
         etReferenceNumbers = findViewById(R.id.et_reference_number)
         etPageFrame = findViewById(R.id.et_page_frames)
         btnSubmit = findViewById(R.id.btn_submit)
+        btnCompare = findViewById(R.id.btn_compare)
         tvFaults = findViewById(R.id.tvFaults)
         tvHit = findViewById(R.id.tvHits)
         tvMissRatio=findViewById(R.id.tvMissRatio)
@@ -95,6 +98,19 @@ class SimulationActivity : AppCompatActivity() {
 
         btnGraphOne.setOnClickListener {
             showGraph(autoCompleteTextView.text.toString())
+        }
+
+        btnCompare.setOnClickListener {
+            val pageFrames = etPageFrame.text.toString()
+            if(etReferenceNumbers.text.toString().isNotEmpty() && etPageFrame.text.toString().isNotEmpty()) {
+
+                // navigate to compare activity
+                val intent = Intent(this,CompareActivity::class.java)
+                intent.putExtra("reference",etReferenceNumbers.getText().toString())
+                intent.putExtra("frame",pageFrames)
+                startActivity(intent)
+            }
+
         }
 
 
@@ -158,6 +174,7 @@ class SimulationActivity : AppCompatActivity() {
         }
         return pageFaults
     }
+
     private fun LIFO(pageReference: IntArray, pageFrame: Int, b: Boolean) : Int {
         var pageFaults = 0
         var pageHits = 0
@@ -234,20 +251,20 @@ class SimulationActivity : AppCompatActivity() {
                     // Find the least recently used pages
                     // that is present in the set
                     var lru = Int.MAX_VALUE
-                    var `val` = Int.MIN_VALUE
+                    var num = Int.MIN_VALUE
                     val itr: Iterator<Int> = s.iterator()
                     while (itr.hasNext()) {
                         val temp = itr.next()
                         if (indexes[temp]!! < lru) {
                             lru = indexes[temp]!!
-                            `val` = temp
+                            num = temp
                         }
                     }
 
                     // Remove the indexes page
-                    s.remove(`val`)
+                    s.remove(num)
                     //remove lru from hashmap
-                    indexes.remove(`val`)
+                    indexes.remove(num)
                     // insert the current page
                     s.add(pageReference.get(i))
 
@@ -272,13 +289,9 @@ class SimulationActivity : AppCompatActivity() {
     private fun OPTIMAL(pageReference: IntArray, pageFrame: Int, b: Boolean):Int {
         var pageFaults = 0
         // Set to store the elements present in queue, used to check if a page is present or not
-        // Set to store the elements present in queue, used to check if a page is present or not
         val set: HashSet<Int> = HashSet()
         // Queue to maintain the order of insertion
-        // Queue to maintain the order of insertion
         val queue: Queue<Int> = LinkedList()
-
-        // traverse the page string
 
         // traverse the page string
         for (i in 0 until pageReference.size) {
@@ -343,12 +356,12 @@ class SimulationActivity : AppCompatActivity() {
             val x4 =frames+3
             val x5 = frames+4
             val x6 = frames+5
-            var y1:Int = 0
-            var y2:Int = 0
-            var y3:Int = 0
-            var y4:Int = 0
-            var y5:Int = 0
-            var y6:Int = 0
+            var y1 = 0
+            var y2 = 0
+            var y3 = 0
+            var y4 = 0
+            var y5 = 0
+            var y6 = 0
    when(str){
        "FIFO"->{
             y1 = FIFO(reference,frames,false)
@@ -415,52 +428,7 @@ class SimulationActivity : AppCompatActivity() {
     }
 
 
-    private fun displayResult(
-        pageFaults: Int,
-        pageHits: Int,
-        hitRatio: Float,
-        missRatio: Float,
-        frames: Int,
-        pageReference: IntArray
-    ) {
-        /*val row1 = TableRow(this@SimulationActivity)
-        val tv1 = TextView(this@SimulationActivity)
-        tv1.text = "Reference"
-        tv1.setPadding(40, 40, 40, 40)
-        tv1.setBackgroundResource(R.drawable.cell_shape)
-        row1.addView(tv1)
-
-        for(i in pageReference){
-            val tv2 = TextView(this@SimulationActivity)
-            tv2.text = i.toString()
-            tv2.setPadding(40, 40, 40, 40)
-            tv2.setBackgroundResource(R.drawable.cell_shape)
-              row1.addView(tv2)
-        }
-        table.addView(row1)
-        for (i in 0 until frames) {
-            val row2 = TableRow(this@SimulationActivity)
-
-
-            //setting frame numbers to table
-            val tv3 = TextView(this@SimulationActivity)
-            tv3.text = "Frame " + (i + 1).toString()
-            tv3.setPadding(40, 40, 40, 40)
-            tv3.setBackgroundResource(R.drawable.cell_shape)
-            row2.addView(tv3)
-
-            for (j in 0 until pageReference.size) {
-
-                val value: Int = (0 until 10).random()
-
-                val tv4 = TextView(this@SimulationActivity)
-                tv4.text = value.toString()
-                tv4.setPadding(40, 40, 40, 40)
-                tv4.setBackgroundResource(R.drawable.cell_shape)
-                row2.addView(tv4)
-            }
-            table.addView(row2)
-        }*/
+    private fun displayResult(pageFaults: Int, pageHits: Int, hitRatio: Float, missRatio: Float, frames: Int, pageReference: IntArray) {
 
 
         //set visibility visible for result

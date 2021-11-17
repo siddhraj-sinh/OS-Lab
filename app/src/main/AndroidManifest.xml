@@ -9,10 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OSLab">
-        <activity android:name=".SimulationActivity"
+        <activity
+            android:name=".CompareActivity"
+            android:exported="true"
+            android:label="Compare All Algorithms"
+            android:parentActivityName=".SimulationActivity"/>
+        <activity
+            android:name=".SimulationActivity"
             android:label="Simulation"
-            android:parentActivityName=".SimulationActivity"
-            />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".TheoryActivity"
             android:label="Theory"
