@@ -49,11 +49,13 @@ Fork & clone this repository in android studio and that's it. for more detials <
 <thead>
 <tr>
 <th align="center">Graph Simulation Screen</th>
+  <th align="center">Compare Screen</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td align="center"><img src="https://user-images.githubusercontent.com/69664213/137669462-ba49ef1a-5847-4344-b618-305afabf0cf9.png" alt="Theory Screen"width="300"></td>
+  <td align="center"><img src="https://user-images.githubusercontent.com/69664213/142752296-4d116e82-4d7d-4fe9-baa2-20c0adb6ed93.jpg" alt="Theory Screen"width="300"></td>
 </tr>
 </tbody>
 </table>
