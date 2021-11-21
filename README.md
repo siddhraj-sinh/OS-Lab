@@ -5,6 +5,9 @@ This is an educational application that allows you to simulate the algorithms th
 The goal of this application is to provide explanations about different approaches to each problem and to illustrate how the each algorithm works by means of simulations.
 for that purpose, this app allows you to provide your own datasets and check how each algorithm would perform on them.
 
+## Run Locally
+Fork & clone this repository in android studio and that's it. for more detials <a href="https://www.geeksforgeeks.org/how-to-clone-android-project-from-github-in-android-studio/">click here.</a>
+
 ## Screenshots
 <table>
 <thead>
